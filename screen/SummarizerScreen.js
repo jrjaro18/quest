@@ -98,7 +98,7 @@ export default function SummarizerScreen() {
     }, [image]);
 
     return (
-        <View className="p-4 bg-neutral-100 flex flex-1 relative]">
+        <View className="p-4 bg-neutral-100 flex flex-1 relative">
             <View className="mx-auto w-80">
                 {
                     image ? (

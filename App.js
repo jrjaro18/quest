@@ -11,15 +11,13 @@ export default function App() {
       <Stack.Navigator
         screenOptions={{
           headerStyle: {
-            backgroundColor: 'whitesmoke',
-            borderWidth: "10px",
-            flex: 1
+            backgroundColor: 'rgb(250,250,250)',
           },
           headerTintColor: 'black',
           headerShadowVisible: false,
           headerTitleStyle: {
             fontWeight: '300',
-            fontSize: 20,
+            fontSize: 30,
           },
         }}
       >
@@ -32,7 +30,7 @@ export default function App() {
         <Stack.Screen name="PDFChatScreen" component={PDFChatsScreen}
           // change header color
           options={{
-            title: "Chat With PDF",
+            title: "QUEAREA",
           }}
         />
       </Stack.Navigator>
