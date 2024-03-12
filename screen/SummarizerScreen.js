@@ -10,7 +10,7 @@ import LottieView from 'lottie-react-native';
 
 export default function SummarizerScreen() {
 
-    const serverLink = "https://393f-34-134-32-6.ngrok-free.app"
+    const serverLink = "https://da87-34-70-137-167.ngrok-free.app"
 
     const [image, setImage] = useState(null);
     const [text, setText] = useState(null);
@@ -98,7 +98,7 @@ export default function SummarizerScreen() {
     }, [image]);
 
     return (
-        <View className="p-4 bg-neutral-100 flex flex-1 relative">
+        <View className="p-4 bg-neutral-50 flex flex-1 relative">
             <View className="mx-auto w-80">
                 {
                     image ? (

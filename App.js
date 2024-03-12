@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import SummarizerScreen from './screen/SummarizerScreen';
 import PDFChatsScreen from './screen/PDFChatScreen';
+import HomeScreen from './screen/HomeScreen';
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -19,20 +20,31 @@ export default function App() {
             fontWeight: '300',
             fontSize: 30,
           },
+          headerBackVisible: false
         }}
       >
-        {/* <Stack.Screen name="Summarizer" component={SummarizerScreen}
+        <Stack.Screen name="HomeScreen" component={HomeScreen}
           // change header color
           options={{
-            title: "PAGE SUMMARIZER",
+            title: "QUEST",
           }}
-        /> */}
+          
+        />
+        <Stack.Screen name="SummarizerScreen" component={SummarizerScreen}
+          // change header color
+          options={{
+            title: "Summarizer",
+            animation: "slide_from_right"
+          }}
+        />
         <Stack.Screen name="PDFChatScreen" component={PDFChatsScreen}
           // change header color
           options={{
-            title: "QUEAREA",
+            title: "Queárea",
+            animation: "slide_from_right"
           }}
         />
+
       </Stack.Navigator>
       <StatusBar />
     </NavigationContainer>

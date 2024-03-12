@@ -44,7 +44,7 @@ const PDFChatScreen = () => {
       });
 
       console.log(formData)
-      const response = await axios.post('http://192.168.29.36:8000/upload/', formData, {
+      const response = await axios.post('https://da87-34-70-137-167.ngrok-free.app/upload/', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -73,10 +73,10 @@ const PDFChatScreen = () => {
     scrolleRef.current.scrollToEnd({ animated: true });
     // Make request to server
     try {
-      const res = await axios.post('http://192.168.29.36:8000/query-pdf/', {
+      let res = await axios.post('https://da87-34-70-137-167.ngrok-free.app/query-pdf/', {
         text: queryText
       });
-
+      res.data.res = res.data.res.replace(/\n/g, "")
       // Update state with model's response
       setChat(prevChat => [
         ...prevChat,
@@ -103,7 +103,7 @@ const PDFChatScreen = () => {
             <>
               <LinearGradient
                 className="h-[90vh] w-[100vw] absolute"
-                colors={["transparent", "#ffeeff", "#fff"]}
+                colors={["transparent", "#fcf4fe", "#fff"]}
               />
 
               <ScrollView
@@ -134,8 +134,8 @@ const PDFChatScreen = () => {
                 {chat && chat.map((element, index) => ( // Using map instead of forEach
                   <ChatBubble
                     isOwnMessage={element.type == "user"}
-                    bubbleColor={element.type == "user" ? '#EEDEF6' : "#e2e4e5"}
-                    tailColor={element.type == "user" ? '#EEDEF6' : "#e2e4e5"}
+                    bubbleColor={element.type == "user" ? '#dde3ff' : "#e3e5f1"}
+                    tailColor={element.type == "user" ? '#dde3ff' : "#e3e5f1"}
                     withTail={true}
                     onPress={() => console.log("Bubble Pressed!")}
                     key={index}
@@ -151,7 +151,7 @@ const PDFChatScreen = () => {
                         copyToClipboard(element.text)
                       }}
                     >
-                      <MaterialCommunityIcons name="content-copy"  size={16} color={element.type == "user" ? "darkred" : "gray"} />
+                      <MaterialCommunityIcons name="content-copy" size={16} color={element.type == "user" ? "darkred" : "gray"} />
 
                     </TouchableOpacity>
                   </ChatBubble>
